@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO.Pipes;
 
 namespace Calc_Rendimento
 {
@@ -6,28 +7,32 @@ namespace Calc_Rendimento
     {
         static void Main()
         {
-            float[] info = Get_info();
-            float capital = info[0];
-            float taxa = info[1] / 100;
-            float tempo = info[2];
-            float aux_tipo = info[3];
-            string tipo1, tipo2;
-
-            if (aux_tipo == 1.1f)
+            while (true)
             {
-                tipo1 = "mensal";
-                tipo2 = "meses";
-            }
-            else
-            {
-                tipo1 = "anual";
-                tipo2 = "anos";
-            }
-            Console.WriteLine("\nSimulação de investimento de R$ {0} a uma taxa {1} de {2} em um período de {3} {4}:\n", capital, tipo1, taxa, tempo, tipo2);
+                float[] info = Get_info();
+                float capital = info[0];
+                float taxa = info[1] / 100;
+                float tempo = info[2];
+                float aux_tipo = info[3];
+                string tipo1, tipo2;
 
-            float[] teste = Calc_Table(capital, taxa, tempo, tipo2);
+                if (aux_tipo == 1.1f)
+                {
+                    tipo1 = "mensal";
+                    tipo2 = "meses";
+                }
+                else
+                {
+                    tipo1 = "anual";
+                    tipo2 = "anos";
+                }
+                Console.WriteLine("\nSimulação de investimento de R$ {0} a uma taxa {1} de {2} em um período de {3} {4}:\n", capital, tipo1, taxa, tempo, tipo2);
 
+                float[] resultados = Calc_Table(capital, taxa, Convert.ToInt32(tempo), tipo2);
+                Console.WriteLine("\nO investimento de R$ {0} a uma taxa {1} de {2} % em um período de {3} {4} irá gerar um montante de R$ {5}, o que representa um lucro de R$ {6} ({7} %).", capital, tipo1, taxa*100, tempo, tipo2, resultados[0], resultados[1], resultados[2]);
 
+                AskSimulation();
+            } 
         }
 
         static float[] Get_info()
@@ -43,17 +48,17 @@ namespace Calc_Rendimento
                 Console.WriteLine("Insira o capital inicial: ");
                 if (!(float.TryParse(Console.ReadLine(), out capital_inicial)))
                 {
-                    Console.WriteLine("\nErro. Insira um valor válido.\n");
+                    ReturnErrorMessage();
                 }
                 else
                 {
                     while (true)
                     {
                         Console.WriteLine("Digite 1 para taxa mensal e 2 para taxa anual: ");
-                        string answer = Console.ReadLine();
+                        string? answer = Console.ReadLine();
                         if (!(int.TryParse(answer, out int aux_answer)))
                         {
-                            Console.WriteLine("\nErro. Digite um valor válido.\n");
+                            ReturnErrorMessage();
                         }
                         else
                         {
@@ -73,32 +78,32 @@ namespace Calc_Rendimento
                                 }
                                 else
                                 {
-                                    Console.WriteLine("\nErro. Digite um valor válido.\n");
+                                    ReturnErrorMessage();
                                 }
                             }
                         }
                     }
                     Console.WriteLine("Insira a taxa {0} (em %): ", tipo_periodo);
-                    string aux_taxa = Console.ReadLine();
+                    string? aux_taxa = Console.ReadLine();
                     if (!(float.TryParse(aux_taxa, out taxa)))
                     {
-                        Console.WriteLine("\nErro. Digite um valor válido.\n");
+                        ReturnErrorMessage();
                     }
                     else
                     {
                         if (taxa <= 0)
                         {
-                            Console.WriteLine("\nErro. Digite um valor válido.\n");
+                            ReturnErrorMessage();
                         }
                         else
                         {
                             Console.WriteLine("Insira o período {0}: ", tipo_periodo);
-                            string aux_periodo = Console.ReadLine();
-                            if (int.TryParse(aux_periodo, out int aux_tempo))
+                            string? aux_periodo = Console.ReadLine();
+                            if (!string.IsNullOrEmpty(aux_periodo) && int.TryParse(aux_periodo, out int aux_tempo))
                             {
                                 if (aux_tempo <= 0)
                                 {
-                                    Console.WriteLine("\nErro. Digite um valor válido.\n");
+                                    ReturnErrorMessage();
                                 }
                                 else
                                 {
@@ -108,7 +113,7 @@ namespace Calc_Rendimento
                             }
                             else
                             {
-                                Console.WriteLine("\nErro. Digite um valor válido.\n");
+                                ReturnErrorMessage();
                             }
                         }
                     }
@@ -120,17 +125,15 @@ namespace Calc_Rendimento
             return info;
         }
 
-        static float[] Calc_Table(float capital_inicial, float taxa, float periodo, string tipo)
+        static float[] Calc_Table(float capital_inicial, float taxa, int periodo, string tipo)
         {
-            int right_periodo = Convert.ToInt32(periodo);
-            float[,] tabela = new float[right_periodo + 1, 3];
-            float montante, total_juros, aux_montante, aux_juros;
-            int int_periodo = Convert.ToInt16(periodo);
-            int[] periodos = new int[int_periodo + 1];
-            float[] montantes = new float[int_periodo + 1];
-            float[] juros = new float[int_periodo + 1];
+            float[,] tabela = new float[periodo + 1, 3];
+            float total_juros = 0, porcentagem_lucro;
+            int[] periodos = new int[periodo + 1];
+            float[] montantes = new float[periodo + 1];
+            float[] juros = new float[periodo + 1];
 
-            for (int i = 0; i <= int_periodo; i++)
+            for (int i = 0; i <= periodo; i++)
             {
                 periodos[i] = i;
             }
@@ -138,19 +141,63 @@ namespace Calc_Rendimento
             juros[0] = 0;
 
             Console.WriteLine("|  {0}  |  Montante  |  Juros  |", tipo);
-            for (int linha = 0; linha < tabela.GetLength(0) + 1; linha++)
+            for (int linha = 0; linha <= periodo; linha++)
             {
-                montantes[linha + 1] = montantes[linha] + (montantes[linha] * taxa);
-                aux_juros[linha + 1] =
-
-                aux_montante = montantes[linha];
-                aux_juros = juros[linha];
-                Console.WriteLine("|  {0}  |   {1}   |    {2}    |", linha + 1, aux_montante, aux_juros);
+                Console.WriteLine("|  {0}  |   {1}   |    {2}    |", linha, montantes[linha], juros[linha]);
+                total_juros += juros[linha];
+                if (linha != periodo)
+                {
+                    juros[linha + 1] = (float)Math.Round(montantes[linha] * taxa, 2);
+                    montantes[linha + 1] = (float)Math.Round(montantes[linha] + juros[linha + 1], 2);
+                }
+                else
+                {
+                    break;
+                }
             }
 
-            float[] results = { montante, total_juros };
+            porcentagem_lucro = (total_juros * 100) / capital_inicial;
+            float[] results = { (float)Math.Round(montantes[periodo - 1], 2), (float)Math.Round(total_juros, 2), (float) Math.Round(porcentagem_lucro, 2) };
             return results;
         }
-    }
 
+        static void ReturnErrorMessage()
+        {
+            Console.WriteLine("\nErro. Insira um valor válido.\n");
+        }
+
+        static bool AskSimulation()
+        {
+            while (true)
+            {
+                string answer;
+                Console.WriteLine("\nDeseja fazer outra simulação? (digite 'S' para sim e 'N' para não)");
+                answer = Console.ReadLine();
+                if (answer != null)
+                {
+                    answer = answer.ToUpper();
+                    if (answer == "N")
+                    {
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        if (answer == "S")
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            ReturnErrorMessage();
+                        }
+                    }
+                }
+                else
+                {
+                    ReturnErrorMessage();
+                }
+            }
+            return (true);
+        }
+    }
 }
