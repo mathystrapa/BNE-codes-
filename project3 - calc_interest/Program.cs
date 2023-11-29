@@ -45,7 +45,7 @@ namespace Calc_Rendimento
 
             while (true)
             {
-                Console.WriteLine("Insira o capital inicial: ");
+                Console.WriteLine("Insira o capital inicial: R$ ");
                 if (!(float.TryParse(Console.ReadLine(), out capital_inicial)))
                 {
                     ReturnErrorMessage();
@@ -157,7 +157,7 @@ namespace Calc_Rendimento
             }
 
             porcentagem_lucro = (total_juros * 100) / capital_inicial;
-            float[] results = { (float)Math.Round(montantes[periodo - 1], 2), (float)Math.Round(total_juros, 2), (float) Math.Round(porcentagem_lucro, 2) };
+            float[] results = { (float)Math.Round(montantes[periodo], 2), (float)Math.Round(total_juros, 2), (float) Math.Round(porcentagem_lucro, 2) };
             return results;
         }
 
