@@ -1,0 +1,14 @@
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema1\bin\Debug\net8.0\problema1.exe
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema1\bin\Debug\net8.0\problema1.deps.json
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema1\bin\Debug\net8.0\problema1.runtimeconfig.json
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema1\bin\Debug\net8.0\problema1.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema1\bin\Debug\net8.0\problema1.pdb
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema1\obj\Debug\net8.0\problema1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema1\obj\Debug\net8.0\problema1.AssemblyInfoInputs.cache
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema1\obj\Debug\net8.0\problema1.AssemblyInfo.cs
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema1\obj\Debug\net8.0\problema1.csproj.CoreCompileInputs.cache
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema1\obj\Debug\net8.0\problema1.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema1\obj\Debug\net8.0\refint\problema1.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema1\obj\Debug\net8.0\problema1.pdb
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema1\obj\Debug\net8.0\problema1.genruntimeconfig.cache
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema1\obj\Debug\net8.0\ref\problema1.dll
