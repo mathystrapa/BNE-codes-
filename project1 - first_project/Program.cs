@@ -10,6 +10,7 @@ namespace myfirstnamespace  // Criamos outro namespace chamado 'myfirstnamespace
         {
             string[] info = GetInfo();  // Criamos um string array chamado info e o atribuímos ao método estático GetInfo
             DisplayWelcomeMessage(info);    // Chama o método estático sem retorno DisplayWelcomeMessage
+            Console.ReadKey();
         }
 
         static string[] GetInfo()   // Cria o método GetInfo estático que retorna um string array

@@ -14,22 +14,24 @@ namespace Calc_Rendimento
                 float taxa = info[1] / 100;
                 float tempo = info[2];
                 float aux_tipo = info[3];
-                string tipo1, tipo2;
+                float investimento_mensal = info[4];
+                string tipo_taxa1, tipo_taxa2;
 
                 if (aux_tipo == 1.1f)
                 {
-                    tipo1 = "mensal";
-                    tipo2 = "meses";
+                    tipo_taxa1 = "mensal";
+                    tipo_taxa2 = "meses";
                 }
                 else
                 {
-                    tipo1 = "anual";
-                    tipo2 = "anos";
+                    tipo_taxa1 = "anual";
+                    tipo_taxa2 = "anos";
                 }
-                Console.WriteLine("\nSimulação de investimento de R$ {0} a uma taxa {1} de {2} em um período de {3} {4}:\n", capital, tipo1, taxa, tempo, tipo2);
 
-                float[] resultados = Calc_Table(capital, taxa, Convert.ToInt32(tempo), tipo2);
-                Console.WriteLine("\nO investimento de R$ {0} a uma taxa {1} de {2} % em um período de {3} {4} irá gerar um montante de R$ {5}, o que representa um lucro de R$ {6} ({7} %).", capital, tipo1, taxa*100, tempo, tipo2, resultados[0], resultados[1], resultados[2]);
+                Console.WriteLine("\nSimulação de investimento inicial de R$ {0} mais um investimento mensal de R$ {1} a uma taxa {2} de {3} em um período de {4} {5}:\n", capital, investimento_mensal, tipo_taxa1, taxa, tempo, tipo_taxa2);
+
+                float[] resultados = Calc_Table(capital, taxa, Convert.ToInt32(tempo), investimento_mensal, tipo_taxa2);
+                Console.WriteLine("\nO investimento inicial de R$ {0} mais um investimento mensal de R$ {1} a uma taxa {2} de {3} em um período de {4} {5} irá gerar um montante de R$ {6}, o que representa um lucro de R$ {7} ({8} %) sobre o total investido ({9})\n", capital, investimento_mensal, tipo_taxa1, taxa, tempo, tipo_taxa2, resultados[0], resultados[1], resultados[2], resultados[3]);
 
                 AskSimulation();
             } 
@@ -37,12 +39,8 @@ namespace Calc_Rendimento
 
         static float[] Get_info()
         {
-            float taxa;
-            float tempo;
-            float capital_inicial;
-            float tipo_return;
             string tipo_periodo;
-
+            float capital_inicial, tipo_return, taxa, tempo, investimento_mensal;
             while (true)
             {
                 Console.WriteLine("Insira o capital inicial: R$ ");
@@ -99,7 +97,7 @@ namespace Calc_Rendimento
                         {
                             Console.WriteLine("Insira o período {0}: ", tipo_periodo);
                             string? aux_periodo = Console.ReadLine();
-                            if (!string.IsNullOrEmpty(aux_periodo) && int.TryParse(aux_periodo, out int aux_tempo))
+                            if (int.TryParse(aux_periodo, out int aux_tempo))
                             {
                                 if (aux_tempo <= 0)
                                 {
@@ -108,7 +106,16 @@ namespace Calc_Rendimento
                                 else
                                 {
                                     tempo = Convert.ToSingle(aux_tempo);
-                                    break;
+                                    Console.WriteLine("Insira o investimento mensal (se houver): ");
+                                    string? aux_investimento_mensal = Console.ReadLine();
+                                    if (!(float.TryParse(aux_investimento_mensal, out investimento_mensal)))
+                                    {
+                                        ReturnErrorMessage();
+                                    }
+                                    else
+                                    {
+                                        break;
+                                    }
                                 }
                             }
                             else
@@ -121,34 +128,49 @@ namespace Calc_Rendimento
             }
 
 
-            float[] info = { capital_inicial, taxa, tempo, tipo_return };
+            float[] info = { capital_inicial, taxa, tempo, tipo_return, investimento_mensal };
             return info;
         }
 
-        static float[] Calc_Table(float capital_inicial, float taxa, int periodo, string tipo)
+        static float[] Calc_Table(float capital_inicial, float taxa, int periodo, float investimento_mensal, string tipo)
         {
+            periodo *= 12;
             float[,] tabela = new float[periodo + 1, 3];
-            float total_juros = 0, porcentagem_lucro;
+            float total_juros, porcentagem_lucro;
             int[] periodos = new int[periodo + 1];
             float[] montantes = new float[periodo + 1];
             float[] juros = new float[periodo + 1];
+            float total_investido = capital_inicial + (investimento_mensal * (periodo - 1));
 
             for (int i = 0; i <= periodo; i++)
             {
                 periodos[i] = i;
             }
-            montantes[0] = capital_inicial;
-            juros[0] = 0;
 
-            Console.WriteLine("|  {0}  |  Montante  |  Juros  |", tipo);
-            for (int linha = 0; linha <= periodo; linha++)
+            if (tipo == "anos")
+                {
+                    taxa = Convert.ToSingle(Math.Pow(1 + taxa, 1.0 / 12.0) - 1);
+                }
+
+            juros[0] = 0;
+            montantes[0] = capital_inicial;
+            juros[1] = montantes[0] * taxa;
+            montantes[1] = montantes[0] + juros[1];
+            juros[2] = montantes[1] * taxa;
+            montantes[2] = montantes[1] + juros[2] + investimento_mensal;
+            total_juros = juros[1] + juros[2];
+
+            Console.WriteLine("|  Meses  |  Montante  |  Juros  |");
+            Console.WriteLine("|    0    |  {0}  |   0   |", (float)Math.Round(montantes[0], 2));
+            Console.WriteLine("|    1    |  {0}  |  {1}  |", (float)Math.Round(montantes[1], 2), (float)Math.Round(juros[1], 2));
+            for (int linha = 2; linha <= periodo; linha++)
             {
-                Console.WriteLine("|  {0}  |   {1}   |    {2}    |", linha, montantes[linha], juros[linha]);
+                Console.WriteLine("|  {0}  |   {1}   |    {2}    |", linha, (float)Math.Round(montantes[linha], 2), (float)Math.Round(juros[linha], 2));
                 total_juros += juros[linha];
                 if (linha != periodo)
                 {
-                    juros[linha + 1] = (float)Math.Round(montantes[linha] * taxa, 2);
-                    montantes[linha + 1] = (float)Math.Round(montantes[linha] + juros[linha + 1], 2);
+                    juros[linha + 1] = montantes[linha] * taxa;
+                    montantes[linha + 1] = montantes[linha] + juros[linha + 1] + investimento_mensal;
                 }
                 else
                 {
@@ -156,8 +178,8 @@ namespace Calc_Rendimento
                 }
             }
 
-            porcentagem_lucro = (total_juros * 100) / capital_inicial;
-            float[] results = { (float)Math.Round(montantes[periodo], 2), (float)Math.Round(total_juros, 2), (float) Math.Round(porcentagem_lucro, 2) };
+            porcentagem_lucro = total_juros * 100 / (total_investido);
+            float[] results = { (float)Math.Round(montantes[periodo], 2), (float)Math.Round(total_juros, 2), (float) Math.Round(porcentagem_lucro, 2), total_investido };
             return results;
         }
 

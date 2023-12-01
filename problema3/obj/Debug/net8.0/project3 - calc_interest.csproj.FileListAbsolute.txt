@@ -12,3 +12,31 @@ C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE e
 C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project3 - calc_interest\obj\Debug\net8.0\project3 - calc_interest.pdb
 C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project3 - calc_interest\obj\Debug\net8.0\project3 - calc_interest.genruntimeconfig.cache
 C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project3 - calc_interest\obj\Debug\net8.0\ref\project3 - calc_interest.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema3\bin\Debug\net8.0\project3 - calc_interest.exe
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema3\bin\Debug\net8.0\project3 - calc_interest.deps.json
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema3\bin\Debug\net8.0\project3 - calc_interest.runtimeconfig.json
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema3\bin\Debug\net8.0\project3 - calc_interest.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema3\bin\Debug\net8.0\project3 - calc_interest.pdb
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema3\obj\Debug\net8.0\project3 - calc_interest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema3\obj\Debug\net8.0\project3 - calc_interest.AssemblyInfoInputs.cache
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema3\obj\Debug\net8.0\project3 - calc_interest.AssemblyInfo.cs
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema3\obj\Debug\net8.0\project3 - calc_interest.csproj.CoreCompileInputs.cache
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema3\obj\Debug\net8.0\project3 - calc_interest.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema3\obj\Debug\net8.0\refint\project3 - calc_interest.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema3\obj\Debug\net8.0\project3 - calc_interest.pdb
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema3\obj\Debug\net8.0\project3 - calc_interest.genruntimeconfig.cache
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\problema3\obj\Debug\net8.0\ref\project3 - calc_interest.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema3\obj\Debug\net8.0\project3 - calc_interest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema3\obj\Debug\net8.0\project3 - calc_interest.AssemblyInfoInputs.cache
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema3\obj\Debug\net8.0\project3 - calc_interest.AssemblyInfo.cs
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema3\obj\Debug\net8.0\project3 - calc_interest.csproj.CoreCompileInputs.cache
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema3\obj\Debug\net8.0\project3 - calc_interest.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema3\obj\Debug\net8.0\refint\project3 - calc_interest.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema3\obj\Debug\net8.0\project3 - calc_interest.pdb
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema3\bin\Debug\net8.0\project3 - calc_interest.exe
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema3\bin\Debug\net8.0\project3 - calc_interest.deps.json
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema3\bin\Debug\net8.0\project3 - calc_interest.runtimeconfig.json
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema3\bin\Debug\net8.0\project3 - calc_interest.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema3\bin\Debug\net8.0\project3 - calc_interest.pdb
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema3\obj\Debug\net8.0\project3 - calc_interest.genruntimeconfig.cache
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema3\obj\Debug\net8.0\ref\project3 - calc_interest.dll

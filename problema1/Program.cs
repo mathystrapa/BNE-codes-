@@ -14,9 +14,15 @@ namespace InvestmentNamespace
 
     class Investment
     {
-        public Investment()
-        {
+        public float Montante;
+        public float Lucro;
+        public float Lucro_porcentagem;
 
+        public Investment(float capital_inicial, float taxa, float tempo, int tipo)
+        {
+            Montante = capital_inicial * ((1 + taxa) ^ tempo);
+            Lucro = Montante - capital_inicial;]
+            Lucro_porcentagem = Lucro / capital_inicial
         }
     }
 }

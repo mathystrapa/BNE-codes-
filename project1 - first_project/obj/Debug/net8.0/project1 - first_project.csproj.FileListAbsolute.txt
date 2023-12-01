@@ -1,0 +1,14 @@
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project1 - first_project\bin\Debug\net8.0\project1 - first_project.exe
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project1 - first_project\bin\Debug\net8.0\project1 - first_project.deps.json
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project1 - first_project\bin\Debug\net8.0\project1 - first_project.runtimeconfig.json
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project1 - first_project\bin\Debug\net8.0\project1 - first_project.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project1 - first_project\bin\Debug\net8.0\project1 - first_project.pdb
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project1 - first_project\obj\Debug\net8.0\project1 - first_project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project1 - first_project\obj\Debug\net8.0\project1 - first_project.AssemblyInfoInputs.cache
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project1 - first_project\obj\Debug\net8.0\project1 - first_project.AssemblyInfo.cs
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project1 - first_project\obj\Debug\net8.0\project1 - first_project.csproj.CoreCompileInputs.cache
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project1 - first_project\obj\Debug\net8.0\project1 - first_project.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project1 - first_project\obj\Debug\net8.0\refint\project1 - first_project.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project1 - first_project\obj\Debug\net8.0\project1 - first_project.pdb
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project1 - first_project\obj\Debug\net8.0\project1 - first_project.genruntimeconfig.cache
+C:\Users\matheusmoreira\OneDrive\Desktop\GitHub repositories - mathystrapa\BNE exercises\project1 - first_project\obj\Debug\net8.0\ref\project1 - first_project.dll
