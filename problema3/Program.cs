@@ -31,7 +31,7 @@ namespace Calc_Rendimento
                 Console.WriteLine("\nSimulação de investimento inicial de R$ {0} mais um investimento mensal de R$ {1} a uma taxa {2} de {3} em um período de {4} {5}:\n", capital, investimento_mensal, tipo_taxa1, taxa, tempo, tipo_taxa2);
 
                 float[] resultados = Calc_Table(capital, taxa, Convert.ToInt32(tempo), investimento_mensal, tipo_taxa2);
-                Console.WriteLine("\nO investimento inicial de R$ {0} mais um investimento mensal de R$ {1} a uma taxa {2} de {3} em um período de {4} {5} irá gerar um montante de R$ {6}, o que representa um lucro de R$ {7} ({8} %) sobre o total investido ({9})\n", capital, investimento_mensal, tipo_taxa1, taxa, tempo, tipo_taxa2, resultados[0], resultados[1], resultados[2], resultados[3]);
+                Console.WriteLine("\nO investimento inicial de R$ {0} mais um investimento mensal de R$ {1} a uma taxa {2} de {3} em um período de {4} {5} irá gerar um montante de R$ {6}, o que representa um lucro de R$ {7} ({8} %) sobre o total investido ({9})\n", Math.Round(capital, 2), investimento_mensal, tipo_taxa1, taxa, tempo, tipo_taxa2, resultados[0], resultados[1], resultados[2], Math.Round(resultados[3], 2));
 
                 AskSimulation();
             } 

@@ -1,0 +1,14 @@
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema4\obj\Debug\net8.0\problema4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema4\obj\Debug\net8.0\problema4.AssemblyInfoInputs.cache
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema4\obj\Debug\net8.0\problema4.AssemblyInfo.cs
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema4\obj\Debug\net8.0\problema4.csproj.CoreCompileInputs.cache
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema4\bin\Debug\net8.0\problema4.exe
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema4\bin\Debug\net8.0\problema4.deps.json
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema4\bin\Debug\net8.0\problema4.runtimeconfig.json
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema4\bin\Debug\net8.0\problema4.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema4\bin\Debug\net8.0\problema4.pdb
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema4\obj\Debug\net8.0\problema4.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema4\obj\Debug\net8.0\refint\problema4.dll
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema4\obj\Debug\net8.0\problema4.pdb
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema4\obj\Debug\net8.0\problema4.genruntimeconfig.cache
+C:\Users\matheusmoreira\OneDrive\Desktop\BNE\problema4\obj\Debug\net8.0\ref\problema4.dll
