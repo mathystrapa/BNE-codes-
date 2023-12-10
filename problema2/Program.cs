@@ -20,12 +20,12 @@ namespace TableInvestment
             Investment investment = new Investment(capital, rate, time);
 
             investment.ShowTableResults();
-            Console.WriteLine($"\nResultados do investimento: \nMontante final: R$ {Math.Round(investment.Amount, 2)}\nLucro líquido: {Math.Round(investment.LiquidProfit, 2)}\nLucro percentual: {Math.Round(investment.PercentageProfit, 2)}.");
+            Console.WriteLine($"\nResultados do investimento: \nMontante final: R$ {investment.Amount.ToString("N2")}\nLucro líquido: {investment.LiquidProfit.ToString("N2")}\nLucro percentual: {investment.PercentageProfit.ToString("N2")} %");
             Console.ReadKey();
         }
     }
 
-    class Investment
+    public class Investment
     {
         public double StartingCapital, InterestRate, Amount, LiquidProfit, PercentageProfit;
         public int Time;
@@ -60,10 +60,10 @@ namespace TableInvestment
             amounts[0] = StartingCapital;
             liquid_profits[0] = 0;
 
-            Console.WriteLine("|  Meses  |  Montante  |  Lucro  |");
+            Console.WriteLine("|  Meses  |   Montante   |   Lucro   |");
             while (cont <= Time)
             {
-                Console.WriteLine($"  {cont}  |  {Math.Round(amounts[cont], 2)}  |  {Math.Round(liquid_profits[cont], 2)}  |");
+                Console.WriteLine($"|    {cont}    |  R$ {amounts[cont].ToString("N2")}  |  R$ {liquid_profits[cont].ToString("N2")}  |");
 
                 if (cont != Time)
                 {
